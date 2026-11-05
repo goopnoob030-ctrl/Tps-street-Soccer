@@ -360,7 +360,7 @@ async def moderate(q, context, rid, approve):
                     db.execute("UPDATE players SET club=? WHERE user_id=?", (club, uid))
                     publish = f"✅ Клуб «{club}» взят игроком {('@'+p['username']) if p['username'] else 'ID '+str(uid)}"
             elif kind == "free_agent":
-                publish = (f"⚽ Свободный агент\n\nRoblox ник: {p['roblox_username']}\n"
+                publish = (f"📬 Свободный агент\n\nRoblox ник: {p['roblox_username']}\n"
                            f"Статус: Ищет клуб!\n📩: {'@'+p['username'] if p['username'] else 'ID '+str(uid)}\n\n{payload['text']}")
             elif kind in ("player_ad", "channel_ad"):
                 publish = payload["text"]
